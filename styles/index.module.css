@@ -1,0 +1,28 @@
+.text {
+  text-transform: capitalize;
+}
+
+.heading {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selectCity {
+  grid-column: span 2 / span 2;
+}
+
+.textArea {
+  grid-column: span 2 / span 2;
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}

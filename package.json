@@ -23,13 +23,18 @@
   "homepage": "https://github.com/batidodecoco/ISWTP6#readme",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "formik": "^2.2.9",
     "husky": "^7.0.2",
+    "lodash": "^4.17.21",
     "next": "^11.1.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.20",
+    "@types/yup": "^0.29.13",
     "standard": "^16.0.3",
     "ts-standard": "^10.0.0",
     "typescript": "^4.4.2"
