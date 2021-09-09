@@ -1,5 +1,22 @@
+@tailwind base;
+@tailwind components;
+
 html,
 body {
+  @apply font-poppins text-gray-700;
+
   background-color: #eee;
-  font-family: "Open Sans", sans-serif;
 }
+
+.container {
+  max-width: 600px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+input[type="text"] {
+  @apply rounded-md;
+}
+
+@tailwind utilities;
