@@ -1,11 +1,9 @@
-import { Button, TextField } from '@material-ui/core'
 import { ReactElement, useEffect, useState } from 'react'
 import { withLayout } from '../components/Layout'
-import styles from '../styles/index.module.css'
 import * as Yup from 'yup'
-import { useFormik } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { isNil } from 'lodash'
 import Router from 'next/router'
-import { isNil, isUndefined } from 'lodash'
 
 const AddressSchema = Yup.object().shape({
   street: Yup.string().max(50, 'La calle es inválida').required('Requerido'),
@@ -43,16 +41,6 @@ function Index (): ReactElement {
     optionalReference: ''
   })
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema: AddressSchema,
-    onSubmit: async (values) => {
-      localStorage.setItem('address', JSON.stringify(values))
-      await Router.push('/')
-    },
-    enableReinitialize: true
-  })
-
   useEffect(() => {
     if (!isNil(localStorage.getItem('address'))) {
       setInitialValues(JSON.parse(localStorage.getItem('address') as string))
@@ -61,96 +49,129 @@ function Index (): ReactElement {
 
   return (
     <div>
-      <Button color='primary'>
-        <p className={styles.text}>Volver</p>
-      </Button>
-      <h1 className={styles.heading}>Ingresá tu dirección</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <div className={styles.grid}>
-          <TextField
-            label='Calle'
-            name='street'
-            value={formik.values.street}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={!isUndefined(formik.touched.street) && !isUndefined(formik.errors.street)}
-            helperText={!isUndefined(formik.touched.street) && !isUndefined(formik.errors.street)}
-          />
-          <TextField
-            label='Número'
-            name='number'
-            value={formik.values.number}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={!isUndefined(formik.touched.number) && !isUndefined(formik.errors.number)}
-            helperText={!isUndefined(formik.touched.number) && !isUndefined(formik.errors.number)}
-          />
-          <TextField
-            label='Piso'
-            name='floor'
-            value={formik.values.floor}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={!isUndefined(formik.touched.floor) && !isUndefined(formik.errors.floor)}
-            helperText={!isUndefined(formik.touched.floor) && !isUndefined(formik.errors.floor)}
-          />
-          <TextField
-            label='Departamento'
-            name='apartment'
-            value={formik.values.apartment}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={!isUndefined(formik.touched.apartment) && !isUndefined(formik.errors.apartment)}
-            helperText={!isUndefined(formik.touched.apartment) && !isUndefined(formik.errors.apartment)}
-          />
-          <TextField
-            className={styles.selectCity}
-            label='Seleccioná tu ciudad'
-            name='city'
-            select
-            SelectProps={{
-              native: true
-            }}
-            value={formik.values.city}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={!isUndefined(formik.touched.city) && !isUndefined(formik.errors.city)}
-            helperText={!isUndefined(formik.touched.city) && !isUndefined(formik.errors.city)}
-          >
-            <option value='1'>Córdoba</option>
-            <option value='2'>Las Varillas</option>
-            <option value='3'>Jesus María</option>
-          </TextField>
-          <TextField
-            className={styles.textArea}
-            label='Ingresar referencia opcional'
-            name='optionalReference'
-            multiline
-            rows={4}
-            value={formik.values.optionalReference}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={
-              !isUndefined(formik.touched.optionalReference) &&
-              !isUndefined(formik.errors.optionalReference)
-            }
-            helperText={
-              !isUndefined(formik.touched.optionalReference) &&
-              !isUndefined(formik.errors.optionalReference)
-            }
-          />
-        </div>
-        <div className={styles.buttonContainer}>
-          <Button
-            type='submit'
-            color='primary'
-            variant='contained'
-            size='large'
-          >
-            Siguiente
-          </Button>
-        </div>
-      </form>
+      <h1 className='text-2xl text-gray-500'>Ingresá tu dirección</h1>
+      <Formik
+        initialValues={{
+          street: initialValues.street,
+          number: initialValues.number,
+          floor: initialValues.floor,
+          apartment: initialValues.apartment,
+          city: initialValues.city,
+          optionalReference: initialValues.optionalReference
+        }}
+        onSubmit={async (values) => {
+          localStorage.setItem('address', JSON.stringify(values))
+          await Router.push('/details')
+        }}
+        validationSchema={AddressSchema}
+        enableReinitialize
+      >
+        <Form>
+          <div className='mt-8 grid grid-cols-2 gap-4'>
+            <div>
+              <Field
+                label='Calle'
+                name='street'
+                type='text'
+                className='w-full border-b rounded-md'
+                placeholder='Calle...'
+              />
+              <ErrorMessage name='street'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div>
+              <Field
+                label='Número'
+                name='number'
+                type='text'
+                className='w-full rounded-md'
+                placeholder='Número....'
+              />
+              <ErrorMessage name='number'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div>
+              <Field
+                label='Piso'
+                name='floor'
+                type='text'
+                className='w-full rounded-md'
+                placeholder='Piso...'
+              />
+              <ErrorMessage name='floor'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div>
+              <Field
+                label='Departamento'
+                name='apartment'
+                type='text'
+                className='w-full rounded-md'
+                placeholder='Departamento...'
+              />
+              <ErrorMessage name='apartment'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div className='col-span-2'>
+              <Field
+                as='select'
+                className='w-full rounded-md'
+                label='Seleccioná tu ciudad'
+                name='city'
+              >
+                <option value='1'>Córdoba</option>
+                <option value='2'>Las Varillas</option>
+                <option value='3'>Jesus María</option>
+              </Field>
+              <ErrorMessage name='city'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+
+            <div className='col-span-2'>
+              <Field
+                as='textarea'
+                className='w-full rounded-md'
+                label='Ingresar referencia opcional'
+                name='optionalReference'
+                placeholder='Ingresá referencia opcional...'
+                rows={4}
+              />
+              <ErrorMessage name='optionalReference'>
+                {(msg) => (
+                  <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                )}
+              </ErrorMessage>
+            </div>
+          </div>
+          <div className='mt-4 w-full flex justify-end'>
+            <button
+              type='submit'
+              className='bg-brand-violet text-white py-4 px-8 rounded-md'
+            >
+              Siguiente
+            </button>
+          </div>
+        </Form>
+      </Formik>
     </div>
   )
 }
