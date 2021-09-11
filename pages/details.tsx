@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import ReactInputMask from 'react-input-mask'
+import DatePicker from 'react-datepicker'
 
 dayjs.extend(isSameOrAfter)
 dayjs.extend(customParseFormat)
@@ -19,34 +20,48 @@ const ValidationSchema = Yup.object().shape({
   arrivalTime: Yup.string()
     .matches(/^(asap|let-me-decide)$/)
     .required('Requerido'),
-  cardNumber: Yup.string()
-    .test('card-number', 'Número de tarjeta inválido', value => {
+  cardNumber: Yup.string().test(
+    'card-number',
+    'Número de tarjeta inválido',
+    (value, schema) => {
+      if (schema.parent.paymentMethod === 'visa') return true
+
       const cardNumber = (value ?? '').replaceAll('-', '')
 
       return new RegExp(/^4[0-9]{12}(?:[0-9]{3})?$/).test(cardNumber)
-    })
-    .required('Requerido'),
+    }
+  ),
   cardExpiry: Yup.string().test(
     'valid-card-expiry',
     'La fecha de expiración es inválida',
-    (cardExpiry) => {
+    (cardExpiry, schema) => {
+      if (schema.parent.paymentMethod === 'visa') return true
+
       return (
         !isUndefined(cardExpiry) &&
-        dayjs(cardExpiry, 'MM/YY', true).isSameOrAfter(dayjs(), 'M')
+        dayjs(cardExpiry, 'MM/YYYY').isValid() &&
+        dayjs(cardExpiry, 'MM/YYYY', true).isSameOrAfter(dayjs(), 'M')
       )
     }
   ),
-  cardCvc: Yup.string()
-    .matches(/^[0-9]{3,4}$/, 'El CVC debe ser de 3 o 4 dígitos')
-    .required('Requerido'),
-  cardHolderName: Yup.string().required('Requerido'),
+  cardCvc: Yup.string().matches(
+    /^[0-9]{3,4}$/,
+    'El CVC debe ser de 3 o 4 dígitos'
+  ),
+  cardHolderName: Yup.string(),
   cashAmount: Yup.number().when('paymentMethod', {
     is: 'cash',
-    then: Yup.number()
-      .min(2220, 'El monto debe ser mayor al total')
-      .required('Requerido'),
+    then: Yup.number().min(2220, 'El monto debe ser mayor al total'),
     otherwise: Yup.number().optional()
-  })
+  }),
+  arrivalDate: Yup.mixed().test(
+    'valid-date',
+    'Debes ingresar una fecha válida',
+    (value) => {
+      if (value === null) return true
+      return dayjs(value).isSameOrAfter(dayjs(), 'hour')
+    }
+  )
 })
 
 function DetailsPage (): ReactElement {
@@ -59,12 +74,14 @@ function DetailsPage (): ReactElement {
         cardExpiry: '',
         cardCvc: '',
         cardHolderName: '',
-        cashAmount: ''
+        cashAmount: '',
+        arrivalDate: dayjs().toDate()
       }}
       onSubmit={async (values) => {
         console.log(values)
       }}
       validationSchema={ValidationSchema}
+      enableReinitialize
     >
       {(props) => (
         <Form>
@@ -137,7 +154,8 @@ function DetailsPage (): ReactElement {
                     mask='9999-9999-9999-9999'
                     placeholder='Número de tarjeta'
                     value={props.values.cardNumber}
-                    onBlur={() => props.setFieldTouched('cardNumber', true, true)}
+                    onBlur={() =>
+                      props.setFieldTouched('cardNumber', true, true)}
                     onChange={(e) => {
                       props.setFieldValue('cardNumber', e.target.value, true)
                     }}
@@ -165,10 +183,11 @@ function DetailsPage (): ReactElement {
                   <ReactInputMask
                     className='w-full'
                     type='text'
-                    mask='99/99'
-                    placeholder='MM/AA'
+                    mask='99/9999'
+                    placeholder='MM/AAAA'
                     value={props.values.cardExpiry}
-                    onBlur={() => props.setFieldTouched('cardExpiry', true, true)}
+                    onBlur={() =>
+                      props.setFieldTouched('cardExpiry', true, true)}
                     onChange={(e) =>
                       props.setFieldValue('cardExpiry', e.target.value)}
                   />
@@ -218,6 +237,32 @@ function DetailsPage (): ReactElement {
               />
               <p className='ml-2'>Quiero decidir yo</p>
             </div>
+            {props.values.arrivalTime === 'let-me-decide' && (
+              <>
+                <DatePicker
+                  selected={props.values.arrivalDate}
+                  onChange={(date) =>
+                    props.setFieldValue('arrivalDate', date, true)}
+                  showTimeSelect
+                  className='w-full'
+                  locale='es'
+                  dateFormat='dd MMMM yyyy h:mm aa'
+                  minDate={dayjs().toDate()}
+                  maxDate={dayjs().add(7, 'day').toDate()}
+                  filterTime={(time) => {
+                    const currentDate = new Date()
+                    const selectedDate = new Date(time)
+
+                    return currentDate.getTime() < selectedDate.getTime()
+                  }}
+                />
+                <ErrorMessage name='arrivalDate'>
+                  {(msg) => (
+                    <div className='pt-1 text-red-400 text-xs'>{msg}</div>
+                  )}
+                </ErrorMessage>
+              </>
+            )}
           </div>
 
           <div className='mt-4 w-full flex justify-end'>

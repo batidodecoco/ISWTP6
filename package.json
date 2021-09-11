@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "test": "ts-standard",
-    "test:fix": "ts-standard --fix",
+    "test:fix": "npx prettier --write . && ts-standard --fix",
     "prepare": "husky install"
   },
   "repository": {
@@ -27,8 +27,10 @@
     "formik": "^2.2.9",
     "husky": "^7.0.2",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "next": "^11.1.2",
     "react": "^17.0.2",
+    "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-input-mask": "^2.0.4",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.20",
+    "@types/react-datepicker": "^4.1.6",
     "@types/react-input-mask": "^3.0.1",
     "@types/yup": "^0.29.13",
     "autoprefixer": "^10.3.4",
