@@ -1,0 +1,810 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Address /> should match the snapshot 1`] = `
+<Home>
+  <div>
+    <h1
+      className="text-2xl text-gray-500"
+    >
+      Ingresá tu dirección
+    </h1>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Object {
+          "apartment": "",
+          "city": "1",
+          "floor": "",
+          "number": "",
+          "optionalReference": "",
+          "street": "",
+        }
+      }
+      onSubmit={[Function]}
+      validationSchema={
+        ObjectSchema {
+          "_blacklist": ReferenceSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_blacklistError": undefined,
+          "_excludedEdges": Array [],
+          "_nodes": Array [
+            "optionalReference",
+            "city",
+            "apartment",
+            "floor",
+            "number",
+            "street",
+          ],
+          "_sortErrors": [Function],
+          "_typeError": [Function],
+          "_whitelist": ReferenceSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_whitelistError": undefined,
+          "conditions": Array [],
+          "deps": Array [],
+          "exclusiveTests": Object {},
+          "fields": Object {
+            "apartment": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {},
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "optional",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "city": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "floor": NumberSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "max": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "optional",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "number",
+            },
+            "number": NumberSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "max": true,
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "number",
+            },
+            "optionalReference": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "max": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "optional",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "street": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "max": true,
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+          },
+          "spec": Object {
+            "abortEarly": true,
+            "nullable": false,
+            "presence": "optional",
+            "recursive": true,
+            "strict": false,
+            "strip": false,
+          },
+          "tests": Array [],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "object",
+        }
+      }
+    >
+      <Form>
+        <form
+          action="#"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div
+            className="mt-8 grid grid-cols-2 gap-4"
+          >
+            <div>
+              <Field
+                className="w-full border-b rounded-md"
+                label="Calle"
+                name="street"
+                placeholder="Calle..."
+                type="text"
+              >
+                <input
+                  className="w-full border-b rounded-md"
+                  label="Calle"
+                  name="street"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Calle..."
+                  type="text"
+                  value=""
+                />
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="street"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="street"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+            <div>
+              <Field
+                className="w-full rounded-md"
+                label="Número"
+                name="number"
+                placeholder="Número...."
+                type="text"
+              >
+                <input
+                  className="w-full rounded-md"
+                  label="Número"
+                  name="number"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Número...."
+                  type="text"
+                  value=""
+                />
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="number"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="number"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+            <div>
+              <Field
+                className="w-full rounded-md"
+                label="Piso"
+                name="floor"
+                placeholder="Piso..."
+                type="text"
+              >
+                <input
+                  className="w-full rounded-md"
+                  label="Piso"
+                  name="floor"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Piso..."
+                  type="text"
+                  value=""
+                />
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="floor"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="floor"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+            <div>
+              <Field
+                className="w-full rounded-md"
+                label="Departamento"
+                name="apartment"
+                placeholder="Departamento..."
+                type="text"
+              >
+                <input
+                  className="w-full rounded-md"
+                  label="Departamento"
+                  name="apartment"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Departamento..."
+                  type="text"
+                  value=""
+                />
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="apartment"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="apartment"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+            <div
+              className="col-span-2"
+            >
+              <Field
+                as="select"
+                className="w-full rounded-md"
+                label="Seleccioná tu ciudad"
+                name="city"
+              >
+                <select
+                  className="w-full rounded-md"
+                  label="Seleccioná tu ciudad"
+                  name="city"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  value="1"
+                >
+                  <option
+                    value="1"
+                  >
+                    Córdoba
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    Las Varillas
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    Jesus María
+                  </option>
+                </select>
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="city"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="city"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+            <div
+              className="col-span-2"
+            >
+              <Field
+                as="textarea"
+                className="w-full rounded-md"
+                label="Ingresar referencia opcional"
+                name="optionalReference"
+                placeholder="Ingresá referencia opcional..."
+                rows={4}
+              >
+                <textarea
+                  className="w-full rounded-md"
+                  label="Ingresar referencia opcional"
+                  name="optionalReference"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Ingresá referencia opcional..."
+                  rows={4}
+                  value=""
+                />
+              </Field>
+              <FormikConnect(ErrorMessageImpl)
+                name="optionalReference"
+              >
+                <ErrorMessageImpl
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "getFieldHelpers": [Function],
+                      "getFieldMeta": [Function],
+                      "getFieldProps": [Function],
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialErrors": Object {},
+                      "initialStatus": undefined,
+                      "initialTouched": Object {},
+                      "initialValues": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": true,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "status": undefined,
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validateOnMount": false,
+                      "values": Object {
+                        "apartment": "",
+                        "city": "1",
+                        "floor": "",
+                        "number": "",
+                        "optionalReference": "",
+                        "street": "",
+                      },
+                    }
+                  }
+                  name="optionalReference"
+                />
+              </FormikConnect(ErrorMessageImpl)>
+            </div>
+          </div>
+          <div
+            className="mt-4 w-full flex justify-end"
+          >
+            <button
+              className="bg-brand-violet text-white py-4 px-8 rounded-md"
+              disabled={false}
+              type="submit"
+            >
+              Siguiente
+            </button>
+          </div>
+        </form>
+      </Form>
+    </Formik>
+  </div>
+</Home>
+`;

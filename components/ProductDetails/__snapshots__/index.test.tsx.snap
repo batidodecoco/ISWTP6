@@ -1,0 +1,709 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetails /> should match the snapshot 1`] = `
+<ProductDetails>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "arrivalDate": "2021-09-12T20:08:40.642Z",
+        "arrivalTime": "asap",
+        "cardCvc": "",
+        "cardExpiry": "",
+        "cardHolderName": "",
+        "cardNumber": "",
+        "cashAmount": "",
+        "paymentMethod": "cash",
+      }
+    }
+    onSubmit={[Function]}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": ReferenceSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_blacklistError": undefined,
+        "_excludedEdges": Array [],
+        "_nodes": Array [
+          "arrivalTime",
+          "arrivalDate",
+          "paymentMethod",
+          "cashAmount",
+          "cardHolderName",
+          "cardCvc",
+          "cardExpiry",
+          "cardNumber",
+        ],
+        "_sortErrors": [Function],
+        "_typeError": [Function],
+        "_whitelist": ReferenceSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_whitelistError": undefined,
+        "conditions": Array [],
+        "deps": Array [],
+        "exclusiveTests": Object {},
+        "fields": Object {
+          "arrivalDate": BaseSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "arrivalTime",
+                    "map": undefined,
+                    "path": "arrivalTime",
+                  },
+                ],
+              },
+            ],
+            "deps": Array [
+              "arrivalTime",
+            ],
+            "exclusiveTests": Object {},
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [],
+            "transforms": Array [],
+            "type": "mixed",
+          },
+          "arrivalTime": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_mutate": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "matches": false,
+              "required": true,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "required",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "cardCvc": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "paymentMethod",
+                    "map": undefined,
+                    "path": "paymentMethod",
+                  },
+                ],
+              },
+            ],
+            "deps": Array [
+              "paymentMethod",
+            ],
+            "exclusiveTests": Object {},
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "cardExpiry": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "valid-card-expiry": false,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "cardHolderName": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "paymentMethod",
+                    "map": undefined,
+                    "path": "paymentMethod",
+                  },
+                ],
+              },
+            ],
+            "deps": Array [
+              "paymentMethod",
+            ],
+            "exclusiveTests": Object {},
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "cardNumber": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "card-number": false,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "cashAmount": NumberSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [
+              Condition {
+                "fn": [Function],
+                "refs": Array [
+                  Reference {
+                    "getter": [Function],
+                    "isContext": false,
+                    "isSibling": true,
+                    "isValue": false,
+                    "key": "paymentMethod",
+                    "map": undefined,
+                    "path": "paymentMethod",
+                  },
+                ],
+              },
+            ],
+            "deps": Array [
+              "paymentMethod",
+            ],
+            "exclusiveTests": Object {},
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "optional",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "number",
+          },
+          "paymentMethod": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_mutate": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "matches": false,
+              "required": true,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "nullable": false,
+              "presence": "required",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+        },
+        "spec": Object {
+          "abortEarly": true,
+          "nullable": false,
+          "presence": "optional",
+          "recursive": true,
+          "strict": false,
+          "strip": false,
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+        "type": "object",
+      }
+    }
+  >
+    <Form>
+      <form
+        action="#"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <h1
+          className="text-2xl text-gray-500"
+        >
+          Este es tu detalle
+        </h1>
+        <div
+          className="p-8 border border-gray-200 flex flex-col rounded-md shadow-md bg-white"
+        >
+          <div
+            className="my-1 flex justify-between items-center"
+          >
+            <p>
+              2 x Lomito Vegano
+            </p>
+            <p>
+              $1500
+            </p>
+          </div>
+          <div
+            className="my-1 flex justify-between items-center"
+          >
+            <p>
+              3 x Taco Vegano
+            </p>
+            <p>
+              $600
+            </p>
+          </div>
+          <div
+            className="mt-4 mb-2 flex justify-between items-center"
+          >
+            <p
+              className="text-sm text-gray-500"
+            >
+              Costo de envío
+            </p>
+            <p>
+              + $120
+            </p>
+          </div>
+          <div
+            className="border-t border-dashed border-gray-500"
+          >
+            <p
+              className="mt-2 text-right font-bold tracking-wider text-2xl"
+            >
+              $2220
+            </p>
+          </div>
+        </div>
+        <h2
+          className="my-4 text-2xl text-gray-500"
+        >
+          ¿Como quieres pagar tu pedido?
+        </h2>
+        <div
+          className="p-8 border border-gray-200 flex flex-col rounded-md shadow-md bg-white"
+        >
+          <div
+            className="my-2 flex items-center"
+          >
+            <Field
+              className="text-brand-violet"
+              name="paymentMethod"
+              type="radio"
+              value="cash"
+            >
+              <input
+                checked={true}
+                className="text-brand-violet"
+                name="paymentMethod"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="radio"
+                value="cash"
+              />
+            </Field>
+            <p
+              className="ml-2"
+            >
+              En efectivo
+            </p>
+          </div>
+          <Field
+            className="w-full"
+            name="cashAmount"
+            placeholder="Ingresar monto"
+            type="text"
+          >
+            <input
+              className="w-full"
+              name="cashAmount"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Ingresar monto"
+              type="text"
+              value=""
+            />
+          </Field>
+          <FormikConnect(ErrorMessageImpl)
+            name="cashAmount"
+          >
+            <ErrorMessageImpl
+              formik={
+                Object {
+                  "dirty": false,
+                  "errors": Object {},
+                  "getFieldHelpers": [Function],
+                  "getFieldMeta": [Function],
+                  "getFieldProps": [Function],
+                  "handleBlur": [Function],
+                  "handleChange": [Function],
+                  "handleReset": [Function],
+                  "handleSubmit": [Function],
+                  "initialErrors": Object {},
+                  "initialStatus": undefined,
+                  "initialTouched": Object {},
+                  "initialValues": Object {
+                    "arrivalDate": "2021-09-12T20:08:40.642Z",
+                    "arrivalTime": "asap",
+                    "cardCvc": "",
+                    "cardExpiry": "",
+                    "cardHolderName": "",
+                    "cardNumber": "",
+                    "cashAmount": "",
+                    "paymentMethod": "cash",
+                  },
+                  "isSubmitting": false,
+                  "isValid": true,
+                  "isValidating": false,
+                  "registerField": [Function],
+                  "resetForm": [Function],
+                  "setErrors": [Function],
+                  "setFieldError": [Function],
+                  "setFieldTouched": [Function],
+                  "setFieldValue": [Function],
+                  "setFormikState": [Function],
+                  "setStatus": [Function],
+                  "setSubmitting": [Function],
+                  "setTouched": [Function],
+                  "setValues": [Function],
+                  "status": undefined,
+                  "submitCount": 0,
+                  "submitForm": [Function],
+                  "touched": Object {},
+                  "unregisterField": [Function],
+                  "validateField": [Function],
+                  "validateForm": [Function],
+                  "validateOnBlur": true,
+                  "validateOnChange": true,
+                  "validateOnMount": false,
+                  "values": Object {
+                    "arrivalDate": "2021-09-12T20:08:40.642Z",
+                    "arrivalTime": "asap",
+                    "cardCvc": "",
+                    "cardExpiry": "",
+                    "cardHolderName": "",
+                    "cardNumber": "",
+                    "cashAmount": "",
+                    "paymentMethod": "cash",
+                  },
+                }
+              }
+              name="cashAmount"
+            />
+          </FormikConnect(ErrorMessageImpl)>
+          <div
+            className="my-2 flex items-center"
+          >
+            <Field
+              className="text-brand-violet"
+              name="paymentMethod"
+              type="radio"
+              value="visa"
+            >
+              <input
+                checked={false}
+                className="text-brand-violet"
+                name="paymentMethod"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="radio"
+                value="visa"
+              />
+            </Field>
+            <p
+              className="ml-2"
+            >
+              Visa
+            </p>
+          </div>
+        </div>
+        <h2
+          className="my-4 text-2xl text-gray-500"
+        >
+          ¿Cuando lo quieres recibir?
+        </h2>
+        <div
+          className="p-8 border border-gray-200 flex flex-col rounded-md shadow-md bg-white"
+        >
+          <div
+            className="my-2 flex items-center"
+          >
+            <Field
+              className="text-brand-violet"
+              name="arrivalTime"
+              type="radio"
+              value="asap"
+            >
+              <input
+                checked={true}
+                className="text-brand-violet"
+                name="arrivalTime"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="radio"
+                value="asap"
+              />
+            </Field>
+            <p
+              className="ml-2"
+            >
+              Lo antes posible
+            </p>
+          </div>
+          <div
+            className="my-2 flex items-center"
+          >
+            <Field
+              className="text-brand-violet"
+              name="arrivalTime"
+              type="radio"
+              value="let-me-decide"
+            >
+              <input
+                checked={false}
+                className="text-brand-violet"
+                name="arrivalTime"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="radio"
+                value="let-me-decide"
+              />
+            </Field>
+            <p
+              className="ml-2"
+            >
+              Quiero decidir yo
+            </p>
+          </div>
+        </div>
+        <div
+          className="mt-4 w-full flex justify-end"
+        >
+          <button
+            className="flex items-center bg-brand-violet text-white py-4 px-8 rounded-md"
+            disabled={false}
+            type="submit"
+          >
+            <FiLock
+              className="mr-2"
+            >
+              <IconBase
+                attr={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": "2",
+                    "viewBox": "0 0 24 24",
+                  }
+                }
+                className="mr-2"
+              >
+                <svg
+                  className="mr-2"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    height="11"
+                    key="0"
+                    rx="2"
+                    ry="2"
+                    width="18"
+                    x="3"
+                    y="11"
+                  />
+                  <path
+                    d="M7 11V7a5 5 0 0 1 10 0v4"
+                    key="1"
+                  />
+                </svg>
+              </IconBase>
+            </FiLock>
+            <p>
+              Pagar
+            </p>
+          </button>
+        </div>
+      </form>
+    </Form>
+  </Formik>
+</ProductDetails>
+`;
