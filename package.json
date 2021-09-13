@@ -45,6 +45,7 @@
     "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.20",
     "@types/react-datepicker": "^4.1.6",
+    "@types/react-dom": "^17.0.9",
     "@types/react-input-mask": "^3.0.1",
     "@types/yup": "^0.29.13",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
@@ -64,7 +65,8 @@
       "dist",
       "next-env.d.ts",
       "tests/*",
-      "jest.config.js"
+      "jest.config.js",
+      "coverage/*"
     ]
   },
   "jest": {

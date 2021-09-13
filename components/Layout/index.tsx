@@ -25,15 +25,20 @@ export default function Layout ({ children }: LayoutProps): ReactElement {
         />
       </Head>
       <div className='relative'>
-        <nav className='w-full fixed top-0 bg-brand-amethyst p-6 flex justify-between items-center shadow-md'>
-          <button onClick={onBack} className='flex items-center text-white p-2'>
-            <BiChevronLeft size='20px' />
-            <p>Volver</p>
-          </button>
-          <h1 className='text-brand-celeste text-2xl font-bold'>DeliverEat!</h1>
-        </nav>
-        <div className='mt-20 container p-4' style={{ minHeight: '100vh' }}>
-          {children}
+        <div className='container' style={{ minHeight: '100vh' }}>
+          <nav className='w-full bg-brand-amethyst p-6 flex justify-between items-center shadow-md'>
+            <button
+              onClick={onBack}
+              className='flex items-center text-white p-2'
+            >
+              <BiChevronLeft size='20px' />
+              <p>Volver</p>
+            </button>
+            <h1 className='text-brand-celeste text-2xl font-bold'>
+              DeliverEat!
+            </h1>
+          </nav>
+          <div className='p-4'>{children}</div>
         </div>
       </div>
     </>
