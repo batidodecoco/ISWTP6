@@ -32,6 +32,19 @@ describe('DetailsSchema', () => {
     expect(DetailsSchema.isValidSync(details)).toBe(false)
   })
 
+  it('should throw when paymentMethod is visa and cardExpiry has an invalid month', () => {
+    const details = {
+      paymentMethod: 'visa',
+      arrivalTime: 'asap',
+      cardNumber: '4111111111111111',
+      cardExpiry: '13/2022',
+      cardCvc: '123',
+      cardHolderName: 'John'
+    }
+
+    expect(DetailsSchema.isValidSync(details)).toBe(false)
+  })
+
   it('should pass when paymentMethod is visa and all card inputs are valid', async () => {
     const details = {
       paymentMethod: 'visa',
