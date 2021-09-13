@@ -28,7 +28,7 @@ const DetailsSchema = Yup.object().shape({
 
       return (
         !isUndefined(cardExpiry) &&
-        dayjs(cardExpiry, 'MM/YYYY').isValid() &&
+        dayjs(cardExpiry, 'MM/YYYY', true).isValid() &&
         dayjs(cardExpiry, 'MM/YYYY', true).isSameOrAfter(dayjs(), 'M')
       )
     }
@@ -45,13 +45,15 @@ const DetailsSchema = Yup.object().shape({
     then: Yup.string().required('Requerido'),
     otherwise: Yup.string().optional()
   }),
-  cashAmount: Yup.number().when('paymentMethod', {
-    is: 'cash',
-    then: Yup.number()
-      .min(2220, 'El monto debe ser mayor al total')
-      .required('Requerido'),
-    otherwise: Yup.number().optional()
-  }),
+  cashAmount: Yup.number()
+    .when('paymentMethod', {
+      is: 'cash',
+      then: Yup.number()
+        .min(2220, 'El monto debe ser mayor al total')
+        .required('Requerido'),
+      otherwise: Yup.number().optional()
+    })
+    .typeError('Inválido'),
   arrivalDate: Yup.mixed().when('arrivalTime', {
     is: 'let-me-decide',
     then: Yup.mixed()
