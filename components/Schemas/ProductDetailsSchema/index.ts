@@ -45,15 +45,14 @@ const DetailsSchema = Yup.object().shape({
     then: Yup.string().required('Requerido'),
     otherwise: Yup.string().optional()
   }),
-  cashAmount: Yup.number()
-    .when('paymentMethod', {
-      is: 'cash',
-      then: Yup.number()
-        .min(2220, 'El monto debe ser mayor al total')
-        .required('Requerido'),
-      otherwise: Yup.number().optional()
-    })
-    .typeError('Inválido'),
+  cashAmount: Yup.number().when('paymentMethod', {
+    is: 'cash',
+    then: Yup.number()
+      .min(2220, 'El monto debe ser mayor al total')
+      .required('Requerido')
+      .typeError('Inválido'),
+    otherwise: Yup.number().optional()
+  }),
   arrivalDate: Yup.mixed().when('arrivalTime', {
     is: 'let-me-decide',
     then: Yup.mixed()
