@@ -1,10 +1,11 @@
 import React, { ReactElement } from 'react'
-import { FiLock } from 'react-icons/fi'
+import { FiLoader, FiLock } from 'react-icons/fi'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import dayjs from '../../utils/dayjs'
 import ReactInputMask from 'react-input-mask'
 import DatePicker from 'react-datepicker'
 import ProductDetailsSchema from '../Schemas/ProductDetailsSchema'
+import Router from 'next/router'
 
 export default function ProductDetails (): ReactElement {
   return (
@@ -19,8 +20,14 @@ export default function ProductDetails (): ReactElement {
         cashAmount: '',
         arrivalDate: dayjs().toDate()
       }}
-      onSubmit={async (values) => {
-        console.log(values)
+      onSubmit={async () => {
+        await new Promise<void>((resolve) =>
+          setTimeout(() => {
+            resolve()
+          }, 3000)
+        )
+
+        await Router.push('/confirmation/success')
       }}
       validationSchema={ProductDetailsSchema}
       enableReinitialize
@@ -213,8 +220,12 @@ export default function ProductDetails (): ReactElement {
               className='flex items-center bg-brand-violet text-white py-4 px-8 rounded-md'
               disabled={props.isSubmitting || !props.isValid}
             >
-              <FiLock className='mr-2' />
-              <p>Pagar</p>
+              {props.isSubmitting ? (
+                <FiLoader className='mr-2' />
+              ) : (
+                <FiLock className='mr-2' />
+              )}
+              <p>{props.isSubmitting ? 'Pagando' : 'Pagar'}</p>
             </button>
           </div>
         </Form>

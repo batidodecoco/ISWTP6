@@ -137,6 +137,11 @@ export default function Home (): ReactElement {
                   name='optionalReference'
                   placeholder='Ingresá referencia opcional...'
                   rows={4}
+                  style={{
+                    resize: 'x',
+                    minHeight: '100px',
+                    maxHeight: '300px'
+                  }}
                 />
                 <ErrorMessage name='optionalReference'>
                   {(msg) => (

@@ -714,6 +714,13 @@ exports[`<Address /> should match the snapshot 1`] = `
                 name="optionalReference"
                 placeholder="Ingresá referencia opcional..."
                 rows={4}
+                style={
+                  Object {
+                    "maxHeight": "300px",
+                    "minHeight": "100px",
+                    "resize": "x",
+                  }
+                }
               >
                 <textarea
                   className="w-full rounded-md"
@@ -723,6 +730,13 @@ exports[`<Address /> should match the snapshot 1`] = `
                   onChange={[Function]}
                   placeholder="Ingresá referencia opcional..."
                   rows={4}
+                  style={
+                    Object {
+                      "maxHeight": "300px",
+                      "minHeight": "100px",
+                      "resize": "x",
+                    }
+                  }
                   value=""
                 />
               </Field>
